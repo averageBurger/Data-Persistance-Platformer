@@ -26,7 +26,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (player.gameIsRunning)
         {
-            rb.AddForce(Vector2.left * speed);
+            rb.AddForce(Vector3.left * speed);
 
             if (transform.position.x < xBoundary)
             {

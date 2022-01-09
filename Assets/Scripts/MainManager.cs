@@ -5,41 +5,15 @@ using UnityEngine;
 
 public static class MainManager
 {
-    public static int coins = 9;
+    public static int coins = 0;
+
     public static List<Color> colourArray;
+    public static Color currentColour;
+
+    public static bool hasLoaded = false;
 
     static void Awake()
     {
         colourArray.Add(Color.white);
-        Load();
-    }
-
-    class SaveData
-    {
-        public int coins;
-        public List<Color> colourArray;
-    }
-
-    public static void Save()
-    {
-        var data = new SaveData();
-        data.coins = coins;
-        data.colourArray = colourArray;
-
-        string json = JsonUtility.ToJson(data);
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
-    }
-
-    public static void Load()
-    {
-        string path = Application.persistentDataPath + "/savefile.json";
-        if (File.Exists(path))
-        {
-            string json = File.ReadAllText(path);
-            SaveData data = JsonUtility.FromJson<SaveData>(path);
-
-            coins = data.coins;
-            colourArray = data.colourArray;
-        }
     }
 }

@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, new Vector2(25, -3), new Quaternion(0, 0, 0, 0));
+        Instantiate(enemyPrefab, new Vector3(25, -3, -0.5f), new Quaternion(0, 0, 0, 0));
     }
 
     IEnumerator SpawnTimer()

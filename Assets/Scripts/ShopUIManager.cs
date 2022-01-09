@@ -49,5 +49,15 @@ public class ShopUIManager : MonoBehaviour
             MainManager.colourArray.Add(colour);
             MainManager.coins -= (price + 1);
         }
+
+        if (MainManager.colourArray.Contains(colour))
+        {
+            MainManager.currentColour = colour;
+        }
+    }
+
+    public void gainCoins()
+    {
+        MainManager.coins++;
     }
 }

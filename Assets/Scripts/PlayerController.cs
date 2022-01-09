@@ -6,6 +6,8 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer render;
+
     [SerializeField] private HealthBarController healthBar;
     [SerializeField] private TextMeshProUGUI scoreText;
 
@@ -21,6 +23,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        render = GetComponent<SpriteRenderer>();
+        //render.material.color = MainManager.currentColour;
+
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(maxHealth);
     }
